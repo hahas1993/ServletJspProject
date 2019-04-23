@@ -11,11 +11,10 @@ import java.util.Set;
 
 public class UsersServlet extends HttpServlet {
 
-    UserDao userDao = new UserDao();
+    private UserDao userDao = new UserDao();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // if user has current session show his dashboard, if not show login page
         doPost(request, response);
     }
 

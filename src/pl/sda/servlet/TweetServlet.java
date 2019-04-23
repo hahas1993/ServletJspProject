@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class TweetServlet extends HttpServlet {
 
-    TweetDao tweetDao = new TweetDao();
+    private TweetDao tweetDao = new TweetDao();
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

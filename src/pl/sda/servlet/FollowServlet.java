@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class FollowServlet extends HttpServlet {
 
-    UserDao userDao = new UserDao();
+    private UserDao userDao = new UserDao();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

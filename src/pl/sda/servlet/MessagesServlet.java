@@ -12,11 +12,10 @@ import java.util.List;
 
 public class MessagesServlet extends HttpServlet {
 
-    TweetDao tweetDao = new TweetDao();
+    private TweetDao tweetDao = new TweetDao();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // if user has current session show his dashboard, if not show login page
         doPost(request, response);
     }
 

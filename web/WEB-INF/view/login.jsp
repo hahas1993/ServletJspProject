@@ -25,7 +25,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fa fa-user"></i> </span>
                     </div>
-                    <input name="login" class="form-control" placeholder="Login" type="text">
+                    <input name="username" class="form-control" placeholder="Login" type="text">
                 </div>
             </div>
             <div class="form-group">
@@ -34,6 +34,12 @@
                         <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                     </div>
                     <input name="password" class="form-control" placeholder="*****" type="password">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-check">
+                    <input id="remember" name="remember" class="form-check-input" type="checkbox">
+                    <label for="remember" class="form-check-label">Remember?</label>
                 </div>
             </div>
             <div class="form-group">
