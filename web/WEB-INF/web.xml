@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <servlet>
+        <servlet-name>homeServlet</servlet-name>
+        <servlet-class>pl.sda.servlet.HomeServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>homeServlet</servlet-name>
+        <url-pattern></url-pattern>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>registerServlet</servlet-name>
+        <servlet-class>pl.sda.servlet.RegisterServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>registerServlet</servlet-name>
+        <url-pattern>/register</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>logoutServlet</servlet-name>
+        <servlet-class>pl.sda.servlet.LogoutServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>logoutServlet</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>messagesServlet</servlet-name>
+        <servlet-class>pl.sda.servlet.MessagesServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>messagesServlet</servlet-name>
+        <url-pattern>/messages</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>usersServlet</servlet-name>
+        <servlet-class>pl.sda.servlet.UsersServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>usersServlet</servlet-name>
+        <url-pattern>/users</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>followServlet</servlet-name>
+        <servlet-class>pl.sda.servlet.FollowServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>followServlet</servlet-name>
+        <url-pattern>/follow</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>unfollowServlet</servlet-name>
+        <servlet-class>pl.sda.servlet.UnfollowServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>unfollowServlet</servlet-name>
+        <url-pattern>/unfollow</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>tweetServlet</servlet-name>
+        <servlet-class>pl.sda.servlet.TweetServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>tweetServlet</servlet-name>
+        <url-pattern>/tweet</url-pattern>
+    </servlet-mapping>
+
+    <filter>
+        <filter-name>loggedInFilter</filter-name>
+        <filter-class>pl.sda.filter.LoggedInFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>loggedInFilter</filter-name>
+        <servlet-name>logoutServlet</servlet-name>
+        <servlet-name>messagesServlet</servlet-name>
+        <servlet-name>usersServlet</servlet-name>
+        <servlet-name>followServlet</servlet-name>
+        <servlet-name>unfollowServlet</servlet-name>
+        <servlet-name>tweetServlet</servlet-name>
+    </filter-mapping>
+</web-app>
