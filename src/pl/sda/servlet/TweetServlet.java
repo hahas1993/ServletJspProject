@@ -3,11 +3,13 @@ package pl.sda.servlet;
 import pl.sda.dao.TweetDao;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+@WebServlet(name = "tweetServlet", urlPatterns = {"/tweet"})
 public class TweetServlet extends HttpServlet {
 
     private TweetDao tweetDao = new TweetDao();

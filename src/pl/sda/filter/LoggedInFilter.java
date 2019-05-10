@@ -1,11 +1,14 @@
 package pl.sda.filter;
 
 import javax.servlet.*;
+import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
+@WebFilter(filterName = "loggedInFilter",
+        servletNames = {"logoutServlet", "messagesServlet", "usersServlet", "followServlet", "unfollowServlet", "tweetServlet"})
 public class LoggedInFilter implements Filter {
 
     @Override
@@ -16,7 +19,7 @@ public class LoggedInFilter implements Filter {
         HttpSession session = request.getSession(false);
         if (session != null) {
             Object username = request.getSession().getAttribute("username");
-            if(username != null && !((String)username).isEmpty() ) {
+            if (username != null && !((String) username).isEmpty()) {
                 filterChain.doFilter(servletRequest, servletResponse);
             }
         }

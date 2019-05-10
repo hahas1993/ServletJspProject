@@ -3,12 +3,14 @@ package pl.sda.servlet;
 import pl.sda.dao.UserDao;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Set;
 
+@WebServlet(name = "usersServlet", urlPatterns = {"/users"})
 public class UsersServlet extends HttpServlet {
 
     private UserDao userDao = new UserDao();
