@@ -50,6 +50,9 @@
                     </strong>
                         ${tweet.message}
                 </p>
+                <c:if test="${tweet.username.equals(username)}">
+                    <a href="deleteTweet?tweetId=${tweet.id}">Delete</a>
+                </c:if>
             </div>
         </c:forEach>
     </div>

@@ -29,6 +29,22 @@ public class TweetDao {
         }
     }
 
+    public void deleteTweet(int tweetId, String username) {
+        Connection connection = null;
+        PreparedStatement statement = null;
+        try {
+            connection = DatabaseConnection.initializeDatabase();
+            statement = connection.prepareStatement("delete from TWEET where ID=? and USER_NAME=?");
+            statement.setInt(1, tweetId);
+            statement.setString(2, username);
+            statement.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            DatabaseConnection.cleanUp(connection, statement);
+        }
+    }
+
     public List<Tweet> getFollowedTweets(String username) {
         Set<String> followedUsers = userDao.getFollowedUsers(username);
         followedUsers.add(username);

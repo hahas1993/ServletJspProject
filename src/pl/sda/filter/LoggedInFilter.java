@@ -8,7 +8,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebFilter(filterName = "loggedInFilter",
-        servletNames = {"logoutServlet", "messagesServlet", "usersServlet", "followServlet", "unfollowServlet", "tweetServlet"})
+        servletNames = {"logoutServlet", "messagesServlet", "usersServlet", "followServlet", "unfollowServlet", "tweetServlet", "deleteTweetServlet"})
 public class LoggedInFilter implements Filter {
 
     @Override
